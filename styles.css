@@ -427,7 +427,7 @@ img {
    TOURNAMENT DETAILS
    ============================================ */
 .details {
-  padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 80px);
+  padding: clamp(40px, 5vw, 60px) clamp(20px, 5vw, 80px) clamp(60px, 8vw, 100px);
   background:
     radial-gradient(ellipse at 50% 0%, rgba(26, 58, 34, 0.5) 0%, transparent 60%),
     var(--dark-green);
@@ -615,7 +615,7 @@ img {
    SPONSORS
    ============================================ */
 .sponsors {
-  padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 80px);
+  padding: clamp(40px, 5vw, 60px) clamp(20px, 5vw, 80px) clamp(60px, 8vw, 100px);
   background: var(--dark-green);
   border-top: 1px solid rgba(201, 168, 76, 0.08);
   border-bottom: 1px solid rgba(201, 168, 76, 0.08);
@@ -727,7 +727,7 @@ img {
    DONATE
    ============================================ */
 .donate {
-  padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 80px);
+  padding: clamp(40px, 5vw, 60px) clamp(20px, 5vw, 80px) clamp(60px, 8vw, 100px);
   text-align: center;
   background:
     radial-gradient(ellipse at 50% 100%, rgba(201, 168, 76, 0.06) 0%, transparent 50%),
