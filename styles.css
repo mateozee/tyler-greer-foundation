@@ -13,9 +13,9 @@
   --gold: #c9a84c;
   --gold-light: #dfc477;
   --gold-dim: #8a7435;
-  --cream: #f5f0e8;
-  --cream-soft: #ede6d8;
-  --white: #fafaf8;
+  --cream: #ffffff;
+  --cream-soft: #ffffff;
+  --white: #ffffff;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
@@ -207,7 +207,7 @@ img {
   background: transparent;
   color: var(--cream);
   padding: 14px 32px;
-  border: 1px solid rgba(245, 240, 232, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 0.9rem;
@@ -282,7 +282,7 @@ img {
 
 .hero-venue {
   font-size: 1rem;
-  color: rgba(245, 240, 232, 0.65);
+  color: rgba(255, 255, 255, 0.65);
   margin-bottom: 40px;
   opacity: 0;
   animation: fadeUp 0.8s var(--ease-out) 0.7s forwards;
@@ -315,7 +315,7 @@ img {
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(245, 240, 232, 0.4);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .scroll-line {
@@ -361,7 +361,7 @@ img {
 
 .stat-label {
   font-size: 0.8rem;
-  color: rgba(245, 240, 232, 0.5);
+  color: rgba(255, 255, 255, 0.5);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -395,7 +395,7 @@ img {
 }
 
 .about-text p {
-  color: rgba(245, 240, 232, 0.65);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 1rem;
   line-height: 1.8;
   margin-bottom: 16px;
@@ -405,11 +405,14 @@ img {
   aspect-ratio: 4 / 5;
   background: var(--dark-green);
   border: 1px solid rgba(201, 168, 76, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   overflow: hidden;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-photo::after {
@@ -418,13 +421,6 @@ img {
   inset: 8px;
   border: 1px solid rgba(201, 168, 76, 0.1);
   pointer-events: none;
-}
-
-.photo-placeholder {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-style: italic;
-  color: rgba(245, 240, 232, 0.25);
-  font-size: 1.2rem;
 }
 
 /* ============================================
@@ -489,7 +485,7 @@ img {
 
 .detail-card p {
   font-size: 0.95rem;
-  color: rgba(245, 240, 232, 0.6);
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.7;
 }
 
@@ -501,7 +497,7 @@ img {
    PRICING / REGISTER
    ============================================ */
 .pricing {
-  padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 80px);
+  padding: clamp(40px, 5vw, 60px) clamp(20px, 5vw, 80px) clamp(80px, 10vw, 140px);
 }
 
 .pricing-inner {
@@ -514,13 +510,13 @@ img {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 500;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .pricing-subtitle {
-  color: rgba(245, 240, 232, 0.6);
-  margin-bottom: 48px;
-  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 24px;
+  font-size: 0.95rem;
 }
 
 .pricing-grid {
@@ -531,7 +527,7 @@ img {
 .price-card {
   background: rgba(15, 38, 19, 0.4);
   border: 1px solid rgba(201, 168, 76, 0.1);
-  padding: 48px 40px;
+  padding: 36px 32px 32px;
   text-align: center;
   position: relative;
   transition: all 0.4s var(--ease-out);
@@ -575,27 +571,27 @@ img {
 
 .price-amount {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: var(--gold);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .price-note {
-  font-size: 0.9rem;
-  color: rgba(245, 240, 232, 0.5);
-  margin-bottom: 28px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 16px;
 }
 
 .price-features {
   text-align: left;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .price-features li {
-  padding: 10px 0;
-  font-size: 0.95rem;
-  color: rgba(245, 240, 232, 0.7);
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px solid rgba(201, 168, 76, 0.06);
   display: flex;
   align-items: center;
@@ -639,7 +635,7 @@ img {
 }
 
 .sponsors-subtitle {
-  color: rgba(245, 240, 232, 0.6);
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 48px;
 }
 
@@ -694,7 +690,7 @@ img {
 .sponsor-tier ul li {
   padding: 8px 0;
   font-size: 0.9rem;
-  color: rgba(245, 240, 232, 0.65);
+  color: rgba(255, 255, 255, 0.65);
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -713,7 +709,7 @@ img {
 }
 
 .sponsors-note p {
-  color: rgba(245, 240, 232, 0.5);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 0.9rem;
 }
 
@@ -751,7 +747,7 @@ img {
 }
 
 .donate-inner > p {
-  color: rgba(245, 240, 232, 0.6);
+  color: rgba(255, 255, 255, 0.6);
   margin-bottom: 40px;
   line-height: 1.8;
 }
@@ -805,7 +801,7 @@ img {
 }
 
 .donate-custom::placeholder {
-  color: rgba(245, 240, 232, 0.35);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 /* Hide number input arrows */
@@ -849,7 +845,7 @@ img {
 }
 
 .footer-brand p {
-  color: rgba(245, 240, 232, 0.5);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 0.9rem;
   line-height: 1.7;
 }
@@ -869,7 +865,7 @@ img {
 
 .footer-col ul li a,
 .footer-col ul li span {
-  color: rgba(245, 240, 232, 0.5);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 0.9rem;
   transition: color 0.3s;
 }
@@ -887,7 +883,7 @@ img {
   justify-content: space-between;
   align-items: center;
   font-size: 0.8rem;
-  color: rgba(245, 240, 232, 0.3);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /* ============================================
