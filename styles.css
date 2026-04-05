@@ -497,7 +497,7 @@ img {
    PRICING / REGISTER
    ============================================ */
 .pricing {
-  padding: clamp(40px, 5vw, 60px) clamp(20px, 5vw, 80px) clamp(80px, 10vw, 140px);
+  padding: clamp(20px, 3vw, 32px) clamp(20px, 5vw, 80px) clamp(40px, 5vw, 60px);
 }
 
 .pricing-inner {
@@ -508,15 +508,15 @@ img {
 
 .pricing-inner h2 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
   font-weight: 500;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .pricing-subtitle {
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 24px;
-  font-size: 0.95rem;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
 }
 
 .pricing-grid {
@@ -615,7 +615,7 @@ img {
    SPONSORS
    ============================================ */
 .sponsors {
-  padding: clamp(40px, 5vw, 60px) clamp(20px, 5vw, 80px) clamp(60px, 8vw, 100px);
+  padding: clamp(20px, 3vw, 32px) clamp(20px, 5vw, 80px) clamp(40px, 5vw, 60px);
   background: var(--dark-green);
   border-top: 1px solid rgba(201, 168, 76, 0.08);
   border-bottom: 1px solid rgba(201, 168, 76, 0.08);
@@ -629,14 +629,14 @@ img {
 
 .sponsors-inner h2 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
   font-weight: 500;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .sponsors-subtitle {
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 48px;
+  margin-bottom: 16px;
 }
 
 .sponsor-tiers {
