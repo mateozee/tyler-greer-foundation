@@ -21,22 +21,24 @@
   var mobileToggle = document.getElementById('mobileToggle');
   var navLinks = document.getElementById('navLinks');
 
-  mobileToggle.addEventListener('click', function() {
-    var isActive = navLinks.classList.toggle('active');
-    mobileToggle.classList.toggle('active');
-    mobileToggle.setAttribute('aria-expanded', isActive);
-    document.body.style.overflow = isActive ? 'hidden' : '';
-  });
-
-  // Close mobile nav on link click
-  var navAnchors = navLinks.querySelectorAll('a');
-  for (var i = 0; i < navAnchors.length; i++) {
-    navAnchors[i].addEventListener('click', function() {
-      navLinks.classList.remove('active');
-      mobileToggle.classList.remove('active');
-      mobileToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+  if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', function() {
+      var isActive = navLinks.classList.toggle('active');
+      mobileToggle.classList.toggle('active');
+      mobileToggle.setAttribute('aria-expanded', isActive);
+      document.body.style.overflow = isActive ? 'hidden' : '';
     });
+
+    // Close mobile nav on link click
+    var navAnchors = navLinks.querySelectorAll('a');
+    for (var i = 0; i < navAnchors.length; i++) {
+      navAnchors[i].addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    }
   }
 
   // Smooth scroll with offset for fixed header
@@ -59,7 +61,7 @@
   }
 
   // Scroll reveal animations
-  var revealElements = document.querySelectorAll('.about, .about-text, .about-photo, .details-inner, .detail-card, .pricing-inner, .price-card, .sponsors-inner, .sponsor-tier, .donate-inner, .stats-bar');
+  var revealElements = document.querySelectorAll('.about, .about-text, .about-photo, .details-inner, .detail-card, .pricing-inner, .price-card, .sponsors-inner, .sponsor-tier, .donate-inner, .stats-bar, .tournament-cta-inner');
 
   function addRevealClass() {
     for (var k = 0; k < revealElements.length; k++) {

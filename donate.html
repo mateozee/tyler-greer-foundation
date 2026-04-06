@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | Tyler Greer Foundation</title>
+  <meta name="description" content="Support the Tyler Greer Foundation with a donation. Every dollar goes directly to honouring Tyler's legacy and making a difference in our community.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Donate | Tyler Greer Foundation">
+  <meta property="og:description" content="Support the Tyler Greer Foundation with a donation. Every dollar makes a difference.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <!-- Update all 3 pages if changing navigation -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">Tyler Greer Foundation</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About Tyler</a></li>
+        <li><a href="tournament.html">Golf Tournament</a></li>
+        <li><a href="#donate" class="active">Donate</a></li>
+      </ul>
+      <a href="#donate" class="btn-primary nav-cta">Donate Now</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- DONATE HERO -->
+  <section class="hero hero--donate" id="hero">
+    <div class="hero-content">
+      <span class="hero-memorial">Support the Foundation</span>
+      <h1 class="hero-title">Make a<br>Donation</h1>
+      <p class="hero-venue">Every dollar honours Tyler's legacy and supports our community.</p>
+      <div class="hero-buttons">
+        <a href="#donate" class="btn-primary">Donate Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOUR DONATION SUPPORTS -->
+  <section class="details">
+    <div class="details-inner">
+      <span class="section-label">Your Impact</span>
+      <h2>What Your Donation Supports</h2>
+      <div class="details-grid">
+        <div class="detail-card">
+          <div class="card-icon">&#10084;&#65039;</div>
+          <h3>Community</h3>
+          <p>Your donation helps bring people together through events and programs that celebrate Tyler's spirit of connection and community.</p>
+        </div>
+        <div class="detail-card">
+          <div class="card-icon">&#127793;</div>
+          <h3>Legacy</h3>
+          <p>Every dollar directly supports the Tyler Greer Foundation's mission to create lasting impact and keep Tyler's memory alive.</p>
+        </div>
+        <div class="detail-card">
+          <div class="card-icon">&#129309;</div>
+          <h3>Giving Back</h3>
+          <p>100% of donations go to the foundation. Your generosity makes a real difference in the lives of those Tyler cared about.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATE -->
+  <section class="donate" id="donate">
+    <div class="donate-inner">
+      <span class="section-label">Support the Foundation</span>
+      <h2>Choose Your Donation Amount</h2>
+      <p>Every contribution, no matter the size, helps honour Tyler's legacy and makes a meaningful difference in our community.</p>
+      <div class="donate-amounts">
+        <button class="donate-amount" data-amount="25">$25</button>
+        <button class="donate-amount" data-amount="50">$50</button>
+        <button class="donate-amount active" data-amount="100">$100</button>
+        <button class="donate-amount" data-amount="250">$250</button>
+        <button class="donate-amount" data-amount="500">$500</button>
+      </div>
+      <input type="number" class="donate-custom" id="donateCustom" placeholder="Or enter a custom amount" min="1">
+      <div class="donate-cta">
+        <a href="#" class="btn-primary" id="donateBtn" data-payment="donate">Donate $100</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <!-- Update all 3 pages if changing navigation -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Tyler Greer Foundation</h3>
+        <p>A registered foundation honouring the memory of Tyler Greer through community, golf, and giving back.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Tyler</a></li>
+          <li><a href="tournament.html">Golf Tournament</a></li>
+          <li><a href="#donate">Donate</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@tylergreerfoundation.com">info@tylergreerfoundation.com</a></li>
+          <li><a href="https://pickeringglen.com/" target="_blank" rel="noopener noreferrer">Pickering Glen Golf Club</a></li>
+          <li><span>Pickering, Ontario</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="yearEl"></span> Tyler Greer Foundation. All rights reserved.</span>
+      <span>Registered Canadian Foundation</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

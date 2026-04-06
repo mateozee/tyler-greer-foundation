@@ -887,6 +887,152 @@ img {
 }
 
 /* ============================================
+   PASSWORD GATE
+   ============================================ */
+.password-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--deep-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s var(--ease-out);
+}
+
+.password-gate-card {
+  background: rgba(15, 38, 19, 0.6);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  padding: 48px 40px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+}
+
+.password-gate-card h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.password-gate-card p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.password-gate-logo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.password-gate-input {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(10, 26, 13, 0.6);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+  margin-bottom: 16px;
+  transition: border-color 0.3s;
+  letter-spacing: 0.1em;
+}
+
+.password-gate-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+}
+
+.password-gate-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.05em;
+}
+
+.password-gate-error {
+  color: #e07c6a;
+  font-size: 0.85rem;
+  margin-bottom: 16px;
+  min-height: 20px;
+}
+
+.password-gate .btn-primary {
+  width: 100%;
+}
+
+/* ============================================
+   TOURNAMENT CTA (Homepage)
+   ============================================ */
+.tournament-cta {
+  padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px);
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(26, 58, 34, 0.5) 0%, transparent 60%),
+    var(--dark-green);
+  border-top: 1px solid rgba(201, 168, 76, 0.08);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+}
+
+.tournament-cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.tournament-cta h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.tournament-cta .hero-date {
+  animation: none;
+  opacity: 1;
+  margin-bottom: 8px;
+}
+
+.tournament-cta .hero-venue {
+  animation: none;
+  opacity: 1;
+  margin-bottom: 32px;
+}
+
+.tournament-cta p {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+
+.tournament-cta .btn-primary {
+  padding: 18px 48px;
+  font-size: 1rem;
+}
+
+/* ============================================
+   HERO MODIFIERS (Sub-pages)
+   ============================================ */
+.hero--tournament {
+  min-height: 60vh;
+}
+
+.hero--donate {
+  min-height: 50vh;
+}
+
+/* Active nav link */
+.nav-links a.active {
+  color: var(--gold);
+}
+
+/* ============================================
    ANIMATIONS
    ============================================ */
 @keyframes fadeUp {
@@ -1023,6 +1169,15 @@ img {
   .donate-amount {
     padding: 12px 20px;
     font-size: 1.1rem;
+  }
+
+  .password-gate-card {
+    padding: 36px 24px;
+  }
+
+  .tournament-cta .btn-primary {
+    width: 100%;
+    max-width: 300px;
   }
 }
 
