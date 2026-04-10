@@ -434,10 +434,10 @@ img {
 
 .btn-green {
   display: inline-block;
-  background: #0a1a0d;
+  background: #1a3a22;
   color: #c9a84c;
   padding: 14px 32px;
-  border: 1px solid #0a1a0d;
+  border: 1px solid #1a3a22;
   font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
@@ -450,10 +450,10 @@ img {
 }
 
 .btn-green:hover {
-  background: #1a3a22;
-  border-color: #1a3a22;
+  background: #2a5435;
+  border-color: #2a5435;
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(10, 26, 13, 0.3);
+  box-shadow: 0 8px 30px rgba(26, 58, 34, 0.3);
 }
 
 .btn-ghost {
