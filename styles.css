@@ -432,6 +432,30 @@ img {
   box-shadow: 0 8px 30px rgba(201, 168, 76, 0.3);
 }
 
+.btn-green {
+  display: inline-block;
+  background: #0a1a0d;
+  color: #c9a84c;
+  padding: 14px 32px;
+  border: 1px solid #0a1a0d;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-out);
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-green:hover {
+  background: #1a3a22;
+  border-color: #1a3a22;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(10, 26, 13, 0.3);
+}
+
 .btn-ghost {
   display: inline-block;
   background: transparent;
