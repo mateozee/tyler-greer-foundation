@@ -789,6 +789,8 @@ img {
   transition: all 0.4s var(--ease-out);
   width: 100%;
   max-width: 420px;
+  display: flex;
+  flex-direction: column;
 }
 
 .price-card.featured {
@@ -842,6 +844,7 @@ img {
 .price-features {
   text-align: left;
   margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .price-features li {
