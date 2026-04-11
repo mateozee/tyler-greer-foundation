@@ -757,7 +757,7 @@ img {
 }
 
 .pricing-inner {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
   text-align: center;
 }
@@ -776,8 +776,9 @@ img {
 }
 
 .pricing-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
 .price-card {
@@ -788,7 +789,6 @@ img {
   position: relative;
   transition: all 0.4s var(--ease-out);
   width: 100%;
-  max-width: 420px;
   display: flex;
   flex-direction: column;
 }
@@ -899,8 +899,9 @@ img {
 }
 
 .sponsor-tiers {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
 .sponsor-tier {
@@ -909,6 +910,8 @@ img {
   padding: 48px 36px;
   transition: all 0.4s var(--ease-out);
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .sponsor-tier.featured-sponsor {
@@ -943,6 +946,7 @@ img {
 .sponsor-tier ul {
   text-align: left;
   margin-bottom: 32px;
+  flex-grow: 1;
 }
 
 .sponsor-tier ul li {
