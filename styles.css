@@ -1425,6 +1425,14 @@ img {
     text-align: center;
   }
 
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .sponsor-tiers {
+    grid-template-columns: 1fr !important;
+  }
+
   .donate-amounts {
     gap: 8px;
   }
