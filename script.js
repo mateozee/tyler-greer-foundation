@@ -26,7 +26,6 @@
       var isActive = navLinks.classList.toggle('active');
       mobileToggle.classList.toggle('active');
       mobileToggle.setAttribute('aria-expanded', isActive);
-      document.body.style.overflow = isActive ? 'hidden' : '';
     });
 
     // Close mobile nav on link click
