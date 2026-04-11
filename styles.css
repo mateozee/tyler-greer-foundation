@@ -876,7 +876,7 @@ img {
 }
 
 .sponsors-inner {
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
@@ -904,7 +904,6 @@ img {
   padding: 48px 36px;
   transition: all 0.4s var(--ease-out);
   width: 100%;
-  max-width: 420px;
 }
 
 .sponsor-tier.featured-sponsor {
@@ -930,7 +929,7 @@ img {
 
 .tier-price {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--gold);
   margin-bottom: 24px;
