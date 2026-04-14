@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Course | Tyler Greer Foundation</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Pickering Glen Golf Club - all 18 holes of the Tyler Greer Memorial Golf Tournament course.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .course-hero {
+      padding: 120px clamp(20px, 5vw, 80px) 60px;
+      text-align: center;
+    }
+
+    .course-hero .section-label {
+      margin-bottom: 16px;
+    }
+
+    .course-hero h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .course-hero p {
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .course-gallery {
+      padding: 40px clamp(20px, 5vw, 80px) clamp(60px, 8vw, 100px);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .holes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .hole-card {
+      background: rgba(15, 38, 19, 0.4);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      overflow: hidden;
+      transition: all 0.4s var(--ease-out);
+    }
+
+    .hole-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201, 168, 76, 0.35);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .hole-image {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--dark-green);
+    }
+
+    .hole-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s var(--ease-out);
+    }
+
+    .hole-card:hover .hole-image img {
+      transform: scale(1.03);
+    }
+
+    .hole-label {
+      padding: 16px 20px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      border-top: 1px solid rgba(201, 168, 76, 0.1);
+    }
+
+    .hole-number {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .hole-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    @media (max-width: 1024px) {
+      .holes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .holes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .course-hero {
+        padding: 100px 20px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PASSWORD GATE -->
+  <div class="password-gate" id="passwordGate" style="display: flex;">
+    <div class="password-gate-card">
+      <div class="password-gate-logo">Tyler Greer Foundation</div>
+      <h2>Golf Tournament Access</h2>
+      <p>This page is password protected. Please enter the tournament password to continue.</p>
+      <form id="passwordForm">
+        <input type="password" class="password-gate-input" id="passwordInput" placeholder="Enter password" autocomplete="off" required>
+        <div class="password-gate-error" id="passwordError"></div>
+        <button type="submit" class="btn-primary">Enter</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">Tyler Greer Foundation</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tournament.html">Tournament</a></li>
+        <li><a href="course.html" class="active">The Course</a></li>
+        <li><a href="tournament.html#register">Register</a></li>
+        <li><a href="tournament.html#sponsors">Sponsors</a></li>
+      </ul>
+      <a href="tournament.html#register" class="btn-primary nav-cta">Register Now</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- COURSE HERO -->
+  <section class="course-hero">
+    <span class="section-label">Pickering Glen Golf Club</span>
+    <h1>The Course</h1>
+    <p>Eighteen holes of classic parkland golf, established in 1968. Scenic slopes, natural waterways, tall cedars, and old-world charm.</p>
+  </section>
+
+  <!-- HOLES GALLERY -->
+  <section class="course-gallery">
+    <div class="holes-grid">
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-1.jpg" alt="Hole 1 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">01</span><span class="hole-title">Hole One</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-2.jpg" alt="Hole 2 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">02</span><span class="hole-title">Hole Two</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-3.jpg" alt="Hole 3 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">03</span><span class="hole-title">Hole Three</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-4.jpg" alt="Hole 4 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">04</span><span class="hole-title">Hole Four</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-5.jpg" alt="Hole 5 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">05</span><span class="hole-title">Hole Five</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-6.jpg" alt="Hole 6 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">06</span><span class="hole-title">Hole Six</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-7.jpg" alt="Hole 7 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">07</span><span class="hole-title">Hole Seven</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-8.jpg" alt="Hole 8 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">08</span><span class="hole-title">Hole Eight</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-9.jpg" alt="Hole 9 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">09</span><span class="hole-title">Hole Nine</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-10.jpg" alt="Hole 10 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">10</span><span class="hole-title">Hole Ten</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-11.jpg" alt="Hole 11 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">11</span><span class="hole-title">Hole Eleven</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-12.jpg" alt="Hole 12 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">12</span><span class="hole-title">Hole Twelve</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-13.jpg" alt="Hole 13 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">13</span><span class="hole-title">Hole Thirteen</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-14.jpg" alt="Hole 14 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">14</span><span class="hole-title">Hole Fourteen</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-15.jpg" alt="Hole 15 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">15</span><span class="hole-title">Hole Fifteen</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-16.jpg" alt="Hole 16 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">16</span><span class="hole-title">Hole Sixteen</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-17.jpg" alt="Hole 17 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">17</span><span class="hole-title">Hole Seventeen</span></div>
+      </div>
+      <div class="hole-card">
+        <div class="hole-image"><img src="course-photos/hole-18.jpg" alt="Hole 18 at Pickering Glen Golf Club"></div>
+        <div class="hole-label"><span class="hole-number">18</span><span class="hole-title">Hole Eighteen</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Tyler Greer Foundation</h3>
+        <p>A registered foundation honouring the memory of Tyler Greer through community, golf, and giving back.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Tyler</a></li>
+          <li><a href="tournament.html">Tournament Details</a></li>
+          <li><a href="course.html">The Course</a></li>
+          <li><a href="tournament.html#register">Register</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@tylergreerfoundation.com">info@tylergreerfoundation.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="yearEl"></span> Tyler Greer Foundation. All rights reserved.</span>
+      <span>Registered Canadian Foundation</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="tournament.js"></script>
+</body>
+</html>
