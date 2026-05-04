@@ -1487,3 +1487,222 @@ img {
     padding: 40px 24px;
   }
 }
+
+/* ============================================
+   REGISTRATION MODAL
+   ============================================ */
+.register-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.register-modal.is-open {
+  display: flex;
+}
+
+.register-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 26, 13, 0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.register-modal-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 720px;
+  background: #102a16;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 48px clamp(24px, 4vw, 56px);
+  margin: auto 0;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+}
+
+.register-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.register-modal-close:hover {
+  color: var(--gold);
+}
+
+.register-modal-body .section-label,
+.register-modal-success .section-label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.register-modal-body h2,
+.register-modal-success h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.register-modal-subtitle {
+  color: var(--gold);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 32px;
+}
+
+.golfer-fieldset {
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  padding: 24px;
+  margin: 0 0 20px;
+}
+
+.golfer-fieldset legend {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--gold);
+  padding: 0 12px;
+  letter-spacing: 0.02em;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.form-field {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 6px;
+}
+
+.form-field input,
+.form-field select {
+  padding: 12px 14px;
+  background: rgba(10, 26, 13, 0.6);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23c9a84c' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+.form-field select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+}
+
+.form-field input:invalid:not(:placeholder-shown),
+.form-field.has-error input,
+.form-field.has-error select {
+  border-color: #e07c6a;
+}
+
+.register-error {
+  color: #e07c6a;
+  font-size: 0.88rem;
+  min-height: 22px;
+  margin: 8px 0 14px;
+}
+
+.register-submit {
+  width: 100%;
+  padding: 16px 32px;
+  font-size: 0.95rem;
+}
+
+.register-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.register-modal-success {
+  text-align: center;
+}
+
+.register-modal-success p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto 28px;
+}
+
+.register-modal-success p strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .register-modal {
+    padding: 0;
+    align-items: stretch;
+  }
+
+  .register-modal-card {
+    padding: 64px 20px 40px;
+    margin: 0;
+    min-height: 100vh;
+    max-width: none;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .golfer-fieldset {
+    padding: 20px 16px;
+  }
+}

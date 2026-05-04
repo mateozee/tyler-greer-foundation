@@ -106,7 +106,7 @@
             <li>Awards dinner for all</li>
             <li>Swag bags for all</li>
           </ul>
-          <a href="#" class="btn-primary" data-payment="foursome">Register Foursome</a>
+          <a href="#" class="btn-primary" data-register="foursome">Register Foursome</a>
         </div>
         <div class="price-card featured">
           <h3>Double</h3>
@@ -118,7 +118,7 @@
             <li>Awards dinner for both</li>
             <li>Swag bags for both</li>
           </ul>
-          <a href="#" class="btn-primary" data-payment="double">Register Double</a>
+          <a href="#" class="btn-primary" data-register="double">Register Double</a>
         </div>
         <div class="price-card featured">
           <h3>Single</h3>
@@ -130,7 +130,7 @@
             <li>Awards dinner</li>
             <li>Swag bag</li>
           </ul>
-          <a href="#" class="btn-primary" data-payment="single">Register Single</a>
+          <a href="#" class="btn-primary" data-register="single">Register Single</a>
         </div>
       </div>
     </div>
@@ -186,6 +186,33 @@
     </div>
   </section>
 
+  <!-- REGISTRATION MODAL -->
+  <div class="register-modal" id="registerModal" aria-hidden="true">
+    <div class="register-modal-overlay" data-close-modal></div>
+    <div class="register-modal-card" role="dialog" aria-modal="true" aria-labelledby="registerModalTitle">
+      <button type="button" class="register-modal-close" data-close-modal aria-label="Close registration form">&times;</button>
+
+      <div class="register-modal-body" id="registerModalBody">
+        <span class="section-label" id="registerModalLabel">Register</span>
+        <h2 id="registerModalTitle">Register Foursome</h2>
+        <p class="register-modal-subtitle" id="registerModalSubtitle">$800 &mdash; team of four</p>
+
+        <form id="registrationForm" novalidate>
+          <div id="golferFieldsets"></div>
+          <div class="register-error" id="registerError"></div>
+          <button type="submit" class="btn-primary register-submit" id="registerSubmit">Submit Registration</button>
+        </form>
+      </div>
+
+      <div class="register-modal-success" id="registerSuccess" hidden>
+        <span class="section-label">Registration Received</span>
+        <h2 id="successTitle">You're registered!</h2>
+        <p id="successCopy"></p>
+        <button type="button" class="btn-primary" data-close-modal>Close</button>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <!-- Update all 3 pages if changing navigation -->
   <footer class="footer">
@@ -218,5 +245,6 @@
 
   <script src="script.js"></script>
   <script src="tournament.js"></script>
+  <script src="register.js"></script>
 </body>
 </html>

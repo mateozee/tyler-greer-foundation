@@ -141,18 +141,15 @@
       e.preventDefault();
       var paymentType = this.getAttribute('data-payment');
 
-      // TODO: Replace with Stripe Checkout session creation
-      // Each button will redirect to a Stripe Checkout page
-      // For now, show an alert
+      // Tournament registrations (foursome/double/single) are handled by register.js.
+      // Remaining placeholders for sponsor and donate flows:
       var message = '';
-      if (paymentType === 'foursome') {
-        message = 'Foursome Registration - $800\n\nStripe checkout will be integrated here.';
-      } else if (paymentType === 'sponsor') {
-        message = 'Hole Sponsorship - $1,000\n\nStripe checkout will be integrated here.';
+      if (paymentType === 'sponsor') {
+        message = 'Hole Sponsorship - $1,000\n\nPayment integration coming soon.';
       } else if (paymentType === 'donate') {
-        message = 'Donation - $' + selectedAmount + '\n\nStripe checkout will be integrated here.';
+        message = 'Donation - $' + selectedAmount + '\n\nPayment integration coming soon.';
       }
-      alert(message);
+      if (message) alert(message);
     });
   }
 
