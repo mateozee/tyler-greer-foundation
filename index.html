@@ -3,15 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tyler Greer Foundation | Honouring Tyler's Legacy</title>
-  <meta name="description" content="The Tyler Greer Foundation honours the memory of Tyler Greer through community, sport, and giving back. Make a donation or join our First Annual Charity Golf Tournament.">
-  <meta name="keywords" content="Tyler Greer Foundation, charity, memorial, donation, community, Pickering Ontario">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Tyler Greer Foundation | Honouring Tyler's Legacy">
-  <meta property="og:description" content="The Tyler Greer Foundation honours the memory of Tyler Greer through community, sport, and giving back.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_CA">
+  <title>Tyler Greer Memorial Golf Tournament</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="First Annual Tyler Greer Memorial Charity Golf Tournament — July 23, 2026 at Pickering Glen Golf Club.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,19 +14,33 @@
 
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="theme-light">
+<body>
+
+  <!-- PASSWORD GATE -->
+  <div class="password-gate" id="passwordGate" style="display: flex;">
+    <div class="password-gate-card">
+      <div class="password-gate-logo">Tyler Greer Memorial</div>
+      <h2>Golf Tournament Access</h2>
+      <p>This page is password protected. Please enter the tournament password to continue.</p>
+      <form id="passwordForm">
+        <input type="password" class="password-gate-input" id="passwordInput" placeholder="Enter password" autocomplete="off" required>
+        <div class="password-gate-error" id="passwordError"></div>
+        <button type="submit" class="btn-primary">Enter</button>
+      </form>
+    </div>
+  </div>
 
   <!-- NAVIGATION -->
   <!-- Update all 3 pages if changing navigation -->
   <header class="header" id="header">
     <nav class="nav">
-      <a href="#" class="nav-logo">Tyler Greer Foundation</a>
+      <a href="index.html" class="nav-logo">Tyler Greer Memorial</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About Tyler</a></li>
-        <li><a href="#foundation">About the Foundation</a></li>
-        <li><a href="tournament.html">Golf Tournament</a></li>
+        <li><a href="#tournament">Tournament Details</a></li>
+        <li><a href="course.html">The Course</a></li>
+        <li><a href="#register">Register</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
       </ul>
-      <a href="#donate" class="btn-primary nav-cta">Donate Now</a>
       <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
         <span></span>
@@ -41,106 +49,236 @@
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
+  <!-- TOURNAMENT HERO -->
+  <section class="hero hero--tournament" id="hero">
     <div class="hero-content">
-      <span class="hero-memorial">In Loving Memory</span>
-      <h1 class="hero-title">Tyler Greer<br>Foundation</h1>
-      <p class="hero-venue" style="margin-bottom: 40px;">Honouring Tyler's legacy through community, sport, and giving back.</p>
+      <span class="hero-memorial">First Annual</span>
+      <h1 class="hero-title">Tyler Greer Memorial<br>Golf Tournament</h1>
+      <p class="hero-date">July 23, 2026</p>
+      <p class="hero-venue">Pickering Glen Golf Club &bull; Pickering, Ontario</p>
       <div class="hero-buttons">
-        <a href="#donate" class="btn-primary">Make a Donation</a>
-      </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ABOUT TYLER -->
-  <section class="about" id="about">
-    <div class="about-text">
-      <span class="section-label">About Tyler</span>
-      <h2>Celebrating a Life<br>Well Lived</h2>
-      <p>The Tyler Greer Foundation was established to honour the memory of Tyler Greer, whose warmth, energy, and love for life touched everyone around him.</p>
-      <p>This foundation carries forward Tyler's spirit by bringing people together through community, sport, and giving back. The First Annual Charity Golf Tournament is our way of celebrating Tyler's legacy while making a meaningful difference.</p>
-      <p>Every dollar raised goes directly to supporting the foundation's mission of community impact in Tyler's name.</p>
-    </div>
-    <div class="about-photo">
-      <img src="tyler.jpeg" alt="Tyler Greer">
-    </div>
-  </section>
-
-  <!-- ABOUT THE FOUNDATION -->
-  <section class="tournament-cta" id="foundation">
-    <div class="tournament-cta-inner">
-      <span class="section-label">About the Foundation</span>
-      <h2>Our Mission</h2>
-      <p>The Tyler Greer Foundation was created to honour Tyler's memory by giving back to the community he loved. Through charitable events, donations, and community initiatives, we aim to create lasting impact in Tyler's name.</p>
-      <p>100% of all funds raised go directly to supporting the foundation's mission. Whether through our annual golf tournament, direct donations, or community partnerships, every contribution helps keep Tyler's legacy alive.</p>
-    </div>
-  </section>
-
-  <!-- DONATE -->
-  <section class="donate" id="donate">
-    <div class="donate-inner">
-      <span class="section-label">Support the Foundation</span>
-      <h2>Make a Donation</h2>
-      <p>Every dollar supports the Tyler Greer Foundation's mission. Your generosity helps keep Tyler's legacy alive and makes a real difference in our community.</p>
-      <div class="donate-amounts">
-        <button class="donate-amount" data-amount="25">$25</button>
-        <button class="donate-amount" data-amount="50">$50</button>
-        <button class="donate-amount active" data-amount="100">$100</button>
-        <button class="donate-amount" data-amount="250">$250</button>
-        <button class="donate-amount" data-amount="500">$500</button>
-      </div>
-      <input type="number" class="donate-custom" id="donateCustom" placeholder="Or enter a custom amount" min="1">
-      <div class="donate-cta">
-        <a href="#" class="btn-primary" id="donateBtn" data-payment="donate">Donate $100</a>
+        <a href="#register" class="btn-primary">Register</a>
+        <a href="#sponsors" class="btn-ghost">Become a Sponsor</a>
       </div>
     </div>
   </section>
 
-  <!-- WHAT YOUR DONATION SUPPORTS -->
-  <section class="details">
+  <!-- TOURNAMENT DETAILS -->
+  <section class="details" id="tournament">
     <div class="details-inner">
-      <span class="section-label">Your Impact</span>
-      <h2>What Your Donation Supports</h2>
+      <span class="section-label">First Annual Tyler Greer Memorial Golf Tournament</span>
+      <h2>Tournament Details</h2>
       <div class="details-grid">
         <div class="detail-card">
-          <div class="card-icon">&#10084;&#65039;</div>
-          <h3>Community</h3>
-          <p>Your donation helps bring people together through events and programs that celebrate Tyler's spirit of connection and community.</p>
+          <div class="card-icon">&#9971;</div>
+          <h3>The Course</h3>
+          <p>Pickering Glen Golf Club, a beautiful 18-hole parkland course established in 1968. Located at 230 Concession Road 7, Pickering, Ontario.</p>
         </div>
         <div class="detail-card">
-          <div class="card-icon">&#127793;</div>
-          <h3>Legacy</h3>
-          <p>Every dollar directly supports the Tyler Greer Foundation's mission to create lasting impact and keep Tyler's memory alive.</p>
+          <div class="card-icon">&#128467;&#65039;</div>
+          <h3>The Date</h3>
+          <p>Wednesday, July 23, 2026. Shotgun start at 12:00pm. Dinner and awards in the evening.</p>
         </div>
         <div class="detail-card">
-          <div class="card-icon">&#129309;</div>
-          <h3>Giving Back</h3>
-          <p>100% of donations go to the foundation. Your generosity makes a real difference in the lives of those Tyler cared about.</p>
+          <div class="card-icon">&#127942;</div>
+          <h3>The Format</h3>
+          <p>Best ball scramble format. Teams of four. Prizes for longest drive, closest to the pin, and tournament champions.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- REGISTER -->
+  <section class="pricing" id="register">
+    <div class="pricing-inner">
+      <span class="section-label">Join Us</span>
+      <h2>Register</h2>
+      <p class="pricing-subtitle">Secure your spot at the First Annual Tyler Greer Memorial Golf Tournament.</p>
+      <div class="pricing-grid">
+        <div class="price-card featured">
+          <h3>Foursome</h3>
+          <div class="price-amount">$800</div>
+          <p class="price-note">team of four</p>
+          <ul class="price-features">
+            <li>18 holes for 4 golfers</li>
+            <li>Golf carts included</li>
+            <li>Awards dinner for all</li>
+            <li>Swag bags for all</li>
+          </ul>
+          <a href="#" class="btn-primary" data-register="foursome">Register Foursome</a>
+        </div>
+        <div class="price-card featured">
+          <h3>Double</h3>
+          <div class="price-amount">$400</div>
+          <p class="price-note">two golfers</p>
+          <ul class="price-features">
+            <li>18 holes for 2 golfers</li>
+            <li>Golf cart included</li>
+            <li>Awards dinner for both</li>
+            <li>Swag bags for both</li>
+          </ul>
+          <a href="#" class="btn-primary" data-register="double">Register Double</a>
+        </div>
+        <div class="price-card featured">
+          <h3>Single</h3>
+          <div class="price-amount">$200</div>
+          <p class="price-note">individual golfer</p>
+          <ul class="price-features">
+            <li>18 holes of golf</li>
+            <li>Golf cart included</li>
+            <li>Awards dinner</li>
+            <li>Swag bag</li>
+          </ul>
+          <a href="#" class="btn-primary" data-register="single">Register Single</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPONSORS -->
+  <section class="sponsors" id="sponsors">
+    <div class="sponsors-inner">
+      <span class="section-label">Sponsorship &amp; Support</span>
+      <h2>Become a Sponsor</h2>
+      <p class="sponsors-subtitle">Support the Tyler Greer Memorial and gain visibility with participants, their families, and the broader community.</p>
+
+      <h3 class="sponsor-group-title">Sponsorship Levels</h3>
+      <div class="sponsor-tiers">
+        <div class="sponsor-tier featured-sponsor">
+          <h3>Platinum</h3>
+          <div class="tier-price">$1,000</div>
+          <p class="tier-availability">1 available</p>
+          <ul>
+            <li>Company signage on all golf carts for the day</li>
+            <li>Option to provide promotional items to each golfer</li>
+            <li>Signage at registration and dinner</li>
+            <li>Listed on tournament website</li>
+          </ul>
+          <p class="sponsor-tier-note">Email Kevin to confirm, then e-transfer <strong>$1,000</strong> to <strong>k.greer@rogers.com</strong>.</p>
+          <a href="mailto:k.greer@rogers.com?subject=Platinum%20Sponsor%20%E2%80%94%20Tyler%20Greer%20Memorial%20Golf" class="btn-primary">Email Kevin to Sponsor</a>
+        </div>
+        <div class="sponsor-tier featured-sponsor">
+          <h3>Gold</h3>
+          <div class="tier-price">$500</div>
+          <p class="tier-availability">18 available</p>
+          <ul>
+            <li>Company signage on one hole on the course</li>
+            <li>Option to provide promotional items to each golfer</li>
+            <li>Signage at registration and dinner</li>
+            <li>Listed on tournament website</li>
+          </ul>
+          <p class="sponsor-tier-note">Email Kevin to confirm, then e-transfer <strong>$500</strong> to <strong>k.greer@rogers.com</strong>.</p>
+          <a href="mailto:k.greer@rogers.com?subject=Gold%20Sponsor%20%E2%80%94%20Tyler%20Greer%20Memorial%20Golf" class="btn-primary">Email Kevin to Sponsor</a>
+        </div>
+        <div class="sponsor-tier featured-sponsor">
+          <h3>Silver</h3>
+          <div class="tier-price">$250</div>
+          <p class="tier-availability">Unlimited</p>
+          <ul>
+            <li>Signage at registration and dinner</li>
+            <li>Listed on tournament website</li>
+          </ul>
+          <p class="sponsor-tier-note">Email Kevin to confirm, then e-transfer <strong>$250</strong> to <strong>k.greer@rogers.com</strong>.</p>
+          <a href="mailto:k.greer@rogers.com?subject=Silver%20Sponsor%20%E2%80%94%20Tyler%20Greer%20Memorial%20Golf" class="btn-primary">Email Kevin to Sponsor</a>
+        </div>
+        <div class="sponsor-tier featured-sponsor">
+          <h3>Putting Contest</h3>
+          <div class="tier-price">$500</div>
+          <p class="tier-availability">1 available</p>
+          <ul>
+            <li>Company signage at the putting contest site</li>
+            <li>Option to provide promotional items to each golfer</li>
+            <li>Signage at registration and dinner</li>
+            <li>Listed on tournament website</li>
+          </ul>
+          <p class="sponsor-tier-note">Email Kevin to confirm, then e-transfer <strong>$500</strong> to <strong>k.greer@rogers.com</strong>.</p>
+          <a href="mailto:k.greer@rogers.com?subject=Putting%20Contest%20Sponsor%20%E2%80%94%20Tyler%20Greer%20Memorial%20Golf" class="btn-primary">Email Kevin to Sponsor</a>
+        </div>
+        <div class="sponsor-tier featured-sponsor">
+          <h3>Chipping Contest</h3>
+          <div class="tier-price">$500</div>
+          <p class="tier-availability">1 available</p>
+          <ul>
+            <li>Company signage at the chipping contest site</li>
+            <li>Option to provide promotional items to each golfer</li>
+            <li>Signage at registration and dinner</li>
+            <li>Listed on tournament website</li>
+          </ul>
+          <p class="sponsor-tier-note">Email Kevin to confirm, then e-transfer <strong>$500</strong> to <strong>k.greer@rogers.com</strong>.</p>
+          <a href="mailto:k.greer@rogers.com?subject=Chipping%20Contest%20Sponsor%20%E2%80%94%20Tyler%20Greer%20Memorial%20Golf" class="btn-primary">Email Kevin to Sponsor</a>
+        </div>
+      </div>
+
+      <h3 class="sponsor-group-title">Other Ways to Support</h3>
+      <div class="sponsor-tiers sponsor-tiers--two">
+        <div class="sponsor-tier featured-sponsor">
+          <h3>Friends of the Tournament</h3>
+          <div class="tier-price">$100&ndash;$249</div>
+          <ul>
+            <li>Company or name listed on the tournament website</li>
+          </ul>
+          <p class="sponsor-tier-note">Email Kevin with the amount you'd like to give, then e-transfer to <strong>k.greer@rogers.com</strong>.</p>
+          <a href="mailto:k.greer@rogers.com?subject=Friend%20of%20the%20Tournament%20%E2%80%94%20Tyler%20Greer%20Memorial%20Golf" class="btn-primary">Email Kevin to Donate</a>
+        </div>
+        <div class="sponsor-tier featured-sponsor">
+          <h3>Silent Auction Prizes</h3>
+          <div class="tier-price">In-Kind</div>
+          <ul>
+            <li>Donate an interesting item for the silent auction</li>
+          </ul>
+          <p class="sponsor-tier-note">Email Kevin with what you'd like to donate and he'll coordinate next steps.</p>
+          <a href="mailto:k.greer@rogers.com?subject=Silent%20Auction%20Prize%20%E2%80%94%20Tyler%20Greer%20Memorial%20Golf" class="btn-primary">Email Kevin to Donate</a>
+        </div>
+      </div>
+
+      <div class="sponsors-note">
+        <p>Interested in a custom sponsorship package? <a href="mailto:k.greer@rogers.com">Email Kevin</a> to discuss.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION MODAL -->
+  <div class="register-modal" id="registerModal" aria-hidden="true">
+    <div class="register-modal-overlay"></div>
+    <div class="register-modal-card" role="dialog" aria-modal="true" aria-labelledby="registerModalTitle">
+      <button type="button" class="register-modal-close" data-close-modal aria-label="Close registration form">&times;</button>
+
+      <div class="register-modal-body" id="registerModalBody">
+        <span class="section-label" id="registerModalLabel">Register</span>
+        <h2 id="registerModalTitle">Register Foursome</h2>
+        <p class="register-modal-subtitle" id="registerModalSubtitle">$800 &mdash; team of four</p>
+
+        <form id="registrationForm" novalidate>
+          <div id="golferFieldsets"></div>
+          <div class="register-error" id="registerError"></div>
+          <button type="submit" class="btn-primary register-submit" id="registerSubmit">Submit Registration</button>
+        </form>
+      </div>
+
+      <div class="register-modal-success" id="registerSuccess" hidden>
+        <span class="section-label">Registration Received</span>
+        <h2 id="successTitle">You're registered!</h2>
+        <p id="successCopy"></p>
+        <button type="button" class="btn-primary" data-close-modal>Close</button>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <!-- Update all 3 pages if changing navigation -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <h3>Tyler Greer Foundation</h3>
-        <p>A registered foundation honouring the memory of Tyler Greer through community, golf, and giving back.</p>
+        <h3>Tyler Greer Memorial</h3>
+        <p>Honouring the memory of Tyler Greer through community, golf, and giving back.</p>
       </div>
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#about">About Tyler</a></li>
-          <li><a href="#foundation">About the Foundation</a></li>
-          <li><a href="tournament.html">Golf Tournament</a></li>
-          <li><a href="#donate">Donate</a></li>
+          <li><a href="#tournament">Tournament Details</a></li>
+          <li><a href="course.html">The Course</a></li>
+          <li><a href="#register">Register</a></li>
+          <li><a href="#sponsors">Sponsors</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -151,10 +289,12 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; <span id="yearEl"></span> Tyler Greer Foundation. All rights reserved.</span>
+      <span>&copy; <span id="yearEl"></span> Tyler Greer Memorial. All rights reserved.</span>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script src="tournament.js"></script>
+  <script src="register.js"></script>
 </body>
 </html>
