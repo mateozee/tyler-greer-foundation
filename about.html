@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Tyler | Tyler Greer Memorial</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Honouring the memory of Tyler Greer through community, sport, and giving back.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    .about-page-hero {
+      padding: 120px clamp(20px, 5vw, 80px) 40px;
+      text-align: center;
+    }
+
+    .about-page-hero .section-label {
+      margin-bottom: 16px;
+    }
+
+    .about-page-hero h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .about-page-hero p {
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .about.about--page {
+      padding-top: 20px;
+      padding-bottom: clamp(60px, 8vw, 100px);
+    }
+
+    .about-cta {
+      text-align: center;
+      padding: 0 clamp(20px, 5vw, 80px) clamp(60px, 8vw, 100px);
+    }
+
+    .about-cta .btn-primary {
+      display: inline-block;
+      min-width: 220px;
+    }
+
+    @media (max-width: 768px) {
+      .about-page-hero {
+        padding: 100px 20px 24px;
+      }
+
+      .about.about--page {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+      }
+
+      .about-photo {
+        max-width: 360px;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="header" id="header">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">Tyler Greer Memorial</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="about.html" class="active">About Tyler</a></li>
+        <li><a href="index.html#tournament">Tournament Details</a></li>
+        <li><a href="course.html">The Course</a></li>
+        <li><a href="index.html#register">Register</a></li>
+        <li><a href="index.html#sponsors">Sponsors</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ABOUT HERO -->
+  <section class="about-page-hero">
+    <span class="section-label">In Loving Memory</span>
+    <h1>About Tyler</h1>
+    <p>Celebrating a life well lived &mdash; and the legacy that lives on through community, sport, and giving back.</p>
+  </section>
+
+  <!-- ABOUT TYLER -->
+  <section class="about about--page" id="about">
+    <div class="about-text">
+      <span class="section-label">Tyler's Story</span>
+      <h2>Celebrating a Life<br>Well Lived</h2>
+      <p>Tyler Greer's warmth, energy, and love for life touched everyone around him. This memorial tournament was created to honour his memory and bring together the community who loved him.</p>
+      <p>Tyler's spirit lives on through the things he cared about most: connection, sport, and giving back. The First Annual Tyler Greer Memorial Golf Tournament is our way of celebrating his legacy while making a meaningful difference together.</p>
+      <p>Every dollar raised goes directly to honouring Tyler's memory and creating lasting impact in his name.</p>
+    </div>
+    <div class="about-photo">
+      <img src="tyler.jpeg" alt="Tyler Greer">
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <a href="index.html#register" class="btn-primary">Register for the Tournament</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>Tyler Greer Memorial</h3>
+        <p>Honouring the memory of Tyler Greer through community, golf, and giving back.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Tyler</a></li>
+          <li><a href="index.html#tournament">Tournament Details</a></li>
+          <li><a href="course.html">The Course</a></li>
+          <li><a href="index.html#register">Register</a></li>
+          <li><a href="index.html#sponsors">Sponsors</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:k.greer@rogers.com">k.greer@rogers.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="yearEl"></span> Tyler Greer Memorial. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
