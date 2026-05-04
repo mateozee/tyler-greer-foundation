@@ -5,7 +5,7 @@
   // Paste the deployed Google Apps Script Web App URL here.
   // Deploy: Apps Script → Deploy → New deployment → Web app
   //   Execute as: Me, Who has access: Anyone
-  var APPS_SCRIPT_URL = 'PASTE_YOUR_DEPLOYED_WEB_APP_URL_HERE';
+  var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyVJUs7ghaoGKv0HCwNqfFaPZ9GRghpPMnwVbjivd7eas8pwLeBLwLX8PBbJYSFeqAP/exec';
 
   var REGISTRATION_TYPES = {
     foursome: { count: 4, label: 'Foursome', amount: 800, subtitle: '$800 — team of four' },
