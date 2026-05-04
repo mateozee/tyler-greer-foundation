@@ -257,7 +257,7 @@
       })
       .catch(function(err) {
         console.error('[register] submission error:', err);
-        errorEl.textContent = 'Something went wrong submitting your registration. Please try again or email info@tylergreerfoundation.com.';
+        errorEl.textContent = 'Something went wrong submitting your registration. Please try again or email k.greer@rogers.com.';
         submitBtn.disabled = false;
         submitBtn.textContent = 'Submit Registration';
       });
