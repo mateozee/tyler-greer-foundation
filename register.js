@@ -234,12 +234,6 @@
     closers[m].addEventListener('click', closeModal);
   }
 
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-      closeModal();
-    }
-  });
-
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     errorEl.textContent = '';

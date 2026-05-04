@@ -1501,6 +1501,29 @@ img {
   padding: 40px 16px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  scrollbar-color: var(--gold) rgba(10, 26, 13, 0.6);
+}
+
+.register-modal::-webkit-scrollbar {
+  width: 16px;
+}
+
+.register-modal::-webkit-scrollbar-track {
+  background: rgba(10, 26, 13, 0.6);
+  border-left: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.register-modal::-webkit-scrollbar-thumb {
+  background-color: var(--gold);
+  border-radius: 8px;
+  border: 3px solid rgba(10, 26, 13, 0.6);
+  background-clip: padding-box;
+  min-height: 60px;
+}
+
+.register-modal::-webkit-scrollbar-thumb:hover {
+  background-color: var(--gold-light);
+  background-clip: padding-box;
 }
 
 .register-modal.is-open {
@@ -1513,7 +1536,6 @@ img {
   background: rgba(10, 26, 13, 0.85);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  cursor: pointer;
 }
 
 .register-modal-card {
