@@ -1440,6 +1440,19 @@ img {
 
   .mobile-toggle {
     display: flex;
+    padding: 14px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .nav-logo {
+    font-size: clamp(0.7rem, 3.4vw, 1rem);
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .nav {
+    gap: 8px;
   }
 
   .hero-buttons {
