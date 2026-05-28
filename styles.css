@@ -1612,6 +1612,26 @@ img {
   height: auto;
 }
 
+.proceeds-cta {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.proceeds-cta-text {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 560px;
+}
+
+.proceeds-cta .btn-primary {
+  display: inline-block;
+}
+
 @media (max-width: 600px) {
   .proceeds-logo {
     padding: 18px 24px;
@@ -1619,6 +1639,19 @@ img {
 
   .proceeds-logo img {
     max-width: 240px;
+  }
+
+  .proceeds-cta {
+    margin-top: 36px;
+  }
+
+  .proceeds-cta-text {
+    font-size: 0.9rem;
+  }
+
+  .proceeds-cta .btn-primary {
+    width: 100%;
+    max-width: 320px;
   }
 }
 
