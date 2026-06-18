@@ -185,12 +185,10 @@
 
     var firstName = data.golfers[0].firstName;
     var typeLabel = data.type.toLowerCase();
-    var amount = '$' + data.amount;
 
     successCopy.innerHTML =
-      'Thanks, ' + escapeHtml(firstName) + '! Your ' + typeLabel + ' is registered. ' +
-      'To complete your registration, please e-transfer <strong>' + amount + '</strong> to ' +
-      '<strong>k.greer@rogers.com</strong>. Please include your name in the e-transfer memo.';
+      'Thanks, ' + escapeHtml(firstName) + '! Your ' + typeLabel + ' is on the waitlist. ' +
+      'Please do not send any money at this time. If we have a cancellation, we will contact you as soon as possible.';
 
     success.scrollTop = 0;
   }
