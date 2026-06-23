@@ -8,9 +8,9 @@
   var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyVJUs7ghaoGKv0HCwNqfFaPZ9GRghpPMnwVbjivd7eas8pwLeBLwLX8PBbJYSFeqAP/exec';
 
   var REGISTRATION_TYPES = {
-    foursome: { count: 4, label: 'Foursome', amount: 800, subtitle: '$800 — team of four' },
-    double:   { count: 2, label: 'Double',   amount: 400, subtitle: '$400 — two golfers' },
-    single:   { count: 1, label: 'Single',   amount: 200, subtitle: '$200 — individual golfer' }
+    foursome: { count: 4, label: 'Foursome', amount: 800, subtitle: 'Team of four' },
+    double:   { count: 2, label: 'Double',   amount: 400, subtitle: 'Two golfers' },
+    single:   { count: 1, label: 'Single',   amount: 200, subtitle: 'Individual golfer' }
   };
 
   var SIZES_MEN = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
@@ -103,8 +103,8 @@
 
     currentType = typeKey;
 
-    titleEl.textContent = 'Register ' + type.label;
-    labelEl.textContent = 'Register — ' + type.label;
+    titleEl.textContent = 'Join the Waitlist — ' + type.label;
+    labelEl.textContent = 'Waitlist — ' + type.label;
     subtitleEl.innerHTML = type.subtitle.replace('—', '&mdash;');
 
     var html = '';
@@ -125,7 +125,7 @@
     success.hidden = true;
     errorEl.textContent = '';
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Submit Registration';
+    submitBtn.textContent = 'Join Waitlist';
 
     modal.classList.add('is-open');
     modal.setAttribute('aria-hidden', 'false');
@@ -257,7 +257,7 @@
         console.error('[register] submission error:', err);
         errorEl.textContent = 'Something went wrong submitting your registration. Please try again or email k.greer@rogers.com.';
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit Registration';
+        submitBtn.textContent = 'Join Waitlist';
       });
   });
 })();
