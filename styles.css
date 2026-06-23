@@ -997,19 +997,17 @@ img {
 }
 
 .sponsor-recognition-card--text {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(201, 168, 76, 0.18);
-  color: var(--cream-soft);
+  background: #ffffff;
+  color: var(--deep-green);
   text-align: center;
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.3;
 }
 
 .sponsor-recognition-card--text:hover {
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: none;
+  background: #ffffff;
 }
 
 .sponsor-recognition-friends {
