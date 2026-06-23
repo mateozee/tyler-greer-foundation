@@ -942,11 +942,11 @@ img {
 }
 
 .sponsor-recognition-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 1.15rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .sponsor-recognition-cards {
