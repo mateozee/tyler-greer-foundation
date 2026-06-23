@@ -69,30 +69,50 @@
   }
   addRevealClass();
 
-  var observer = new IntersectionObserver(function(entries) {
-    for (var m = 0; m < entries.length; m++) {
-      if (entries[m].isIntersecting) {
-        entries[m].target.classList.add('visible');
+  if (typeof IntersectionObserver === 'undefined') {
+    // Graceful fallback: just reveal everything immediately
+    for (var p = 0; p < revealElements.length; p++) {
+      revealElements[p].classList.add('visible');
+    }
+  } else {
+    var observer = new IntersectionObserver(function(entries) {
+      for (var m = 0; m < entries.length; m++) {
+        if (entries[m].isIntersecting) {
+          entries[m].target.classList.add('visible');
 
-        // Stagger children
-        var children = entries[m].target.querySelectorAll('.detail-card, .price-card, .sponsor-tier, .stat-item');
-        for (var n = 0; n < children.length; n++) {
-          (function(child, delay) {
-            setTimeout(function() {
-              child.classList.add('reveal-child');
-              child.classList.add('visible');
-            }, delay);
-          })(children[n], n * 100);
+          // Stagger children
+          var children = entries[m].target.querySelectorAll('.detail-card, .price-card, .sponsor-tier, .stat-item');
+          for (var n = 0; n < children.length; n++) {
+            (function(child, delay) {
+              setTimeout(function() {
+                child.classList.add('reveal-child');
+                child.classList.add('visible');
+              }, delay);
+            })(children[n], n * 100);
+          }
+
+          observer.unobserve(entries[m].target);
         }
       }
-    }
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-  });
+    }, {
+      threshold: 0,
+      rootMargin: '0px 0px -10% 0px'
+    });
 
-  for (var p = 0; p < revealElements.length; p++) {
-    observer.observe(revealElements[p]);
+    for (var p = 0; p < revealElements.length; p++) {
+      observer.observe(revealElements[p]);
+    }
+
+    // Safety net: if any reveal element is still hidden after the page settles,
+    // reveal it anyway. Prevents tall sections (where threshold can't be met in
+    // a small viewport) from staying invisible.
+    setTimeout(function() {
+      for (var q = 0; q < revealElements.length; q++) {
+        if (!revealElements[q].classList.contains('visible')) {
+          revealElements[q].classList.add('visible');
+        }
+      }
+    }, 1500);
   }
 
   // Donation amount selection
