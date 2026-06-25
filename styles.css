@@ -1004,10 +1004,23 @@ img {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.3;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .sponsor-recognition-card--text:hover {
   background: #ffffff;
+}
+
+.sponsor-recognition-card--text .sponsor-recognition-name {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.sponsor-recognition-card--text .sponsor-recognition-org {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(10, 26, 13, 0.7);
 }
 
 .sponsor-recognition-friends {
@@ -1016,6 +1029,19 @@ img {
   color: var(--cream-soft);
   margin: 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sponsor-recognition-friends .sponsor-recognition-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.sponsor-recognition-friends .sponsor-recognition-org {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 720px) {
