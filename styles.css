@@ -951,10 +951,10 @@ img {
 
 .sponsor-recognition-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   width: 100%;
-  max-width: 880px;
+  max-width: 1040px;
 }
 
 .sponsor-recognition-cards--featured {
@@ -1024,22 +1024,28 @@ img {
 }
 
 .sponsor-recognition-friends {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.3rem;
-  color: var(--cream-soft);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px 64px;
   margin: 0;
-  text-align: center;
+}
+
+.sponsor-recognition-friend {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  color: var(--cream-soft);
 }
 
-.sponsor-recognition-friends .sponsor-recognition-name {
+.sponsor-recognition-friend .sponsor-recognition-name {
   font-size: 1.5rem;
   font-weight: 700;
 }
 
-.sponsor-recognition-friends .sponsor-recognition-org {
+.sponsor-recognition-friend .sponsor-recognition-org {
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.7);
 }
