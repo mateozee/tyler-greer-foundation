@@ -1038,6 +1038,19 @@ img {
   color: rgba(10, 26, 13, 0.7);
 }
 
+.sponsor-recognition-card--with-logo {
+  gap: 10px;
+}
+
+.sponsor-recognition-card img.sponsor-recognition-inline-logo {
+  display: block;
+  max-width: 140px;
+  max-height: 36px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
 .sponsor-recognition-friends {
   display: flex;
   flex-wrap: wrap;
