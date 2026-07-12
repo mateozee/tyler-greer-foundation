@@ -1011,6 +1011,20 @@ img {
   max-width: 400px;
 }
 
+.sponsor-recognition-card--contest {
+  min-height: 130px;
+  padding: 28px 32px;
+}
+
+.sponsor-recognition-card--text.sponsor-recognition-card--contest .sponsor-recognition-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.sponsor-recognition-row--putting .sponsor-recognition-cards--featured {
+  max-width: 420px;
+}
+
 .sponsor-recognition-card--text {
   background: #ffffff;
   color: var(--deep-green);
