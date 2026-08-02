@@ -60,7 +60,7 @@
   }
 
   // Scroll reveal animations
-  var revealElements = document.querySelectorAll('.about, .about-text, .about-photo, .details-inner, .detail-card, .pricing-inner, .price-card, .sponsors-inner, .sponsor-tier, .donate-inner, .stats-bar, .tournament-cta-inner');
+  var revealElements = document.querySelectorAll('.recap-inner, .about, .about-text, .about-photo, .details-inner, .detail-card, .pricing-inner, .price-card, .sponsors-inner, .sponsor-tier, .donate-inner, .stats-bar, .tournament-cta-inner');
 
   function addRevealClass() {
     for (var k = 0; k < revealElements.length; k++) {
