@@ -2084,6 +2084,16 @@ img {
   border-color: #e07c6a;
 }
 
+/* Spam-trap field: off-screen, not display:none so simple bots still fill it */
+.register-hp {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .register-error {
   color: #e07c6a;
   font-size: 0.88rem;
