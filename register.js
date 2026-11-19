@@ -16,6 +16,11 @@
   var SIZES_MEN = ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'];
   var SIZES_WOMEN = ['XS', 'S', 'M', 'L', 'XL', '2XL'];
 
+  // Spam protection: submissions faster than this after opening the form are treated as bots
+  var MIN_FILL_MS = 3000;
+  var MAX_NAME_LEN = 60;
+  var MAX_EMAIL_LEN = 254;
+
   var modal = document.getElementById('registerModal');
   if (!modal) return;
 
@@ -31,6 +36,7 @@
   var successCopy = document.getElementById('successCopy');
 
   var currentType = null;
+  var openedAt = 0;
 
   function buildGolferFieldset(index, total) {
     var legendText = total === 1 ? 'Golfer Details' : 'Golfer ' + (index + 1);
@@ -40,16 +46,16 @@
       +   '<div class="form-row">'
       +     '<div class="form-field">'
       +       '<label for="g' + index + '-first">First name</label>'
-      +       '<input id="g' + index + '-first" name="g' + index + '-first" type="text" autocomplete="given-name" required>'
+      +       '<input id="g' + index + '-first" name="g' + index + '-first" type="text" autocomplete="given-name" maxlength="' + MAX_NAME_LEN + '" required>'
       +     '</div>'
       +     '<div class="form-field">'
       +       '<label for="g' + index + '-last">Last name</label>'
-      +       '<input id="g' + index + '-last" name="g' + index + '-last" type="text" autocomplete="family-name" required>'
+      +       '<input id="g' + index + '-last" name="g' + index + '-last" type="text" autocomplete="family-name" maxlength="' + MAX_NAME_LEN + '" required>'
       +     '</div>'
       +   '</div>'
       +   '<div class="form-field">'
       +     '<label for="g' + index + '-email">Email</label>'
-      +     '<input id="g' + index + '-email" name="g' + index + '-email" type="email" autocomplete="email" required>'
+      +     '<input id="g' + index + '-email" name="g' + index + '-email" type="email" autocomplete="email" maxlength="' + MAX_EMAIL_LEN + '" required>'
       +   '</div>'
       +   '<div class="form-row">'
       +     '<div class="form-field">'
@@ -102,6 +108,7 @@
     if (!type) return;
 
     currentType = typeKey;
+    openedAt = Date.now();
 
     titleEl.textContent = 'Join the Waitlist — ' + type.label;
     labelEl.textContent = 'Waitlist — ' + type.label;
@@ -151,9 +158,9 @@
     var golfers = [];
     for (var i = 0; i < type.count; i++) {
       golfers.push({
-        firstName:   document.getElementById('g' + i + '-first').value.trim(),
-        lastName:    document.getElementById('g' + i + '-last').value.trim(),
-        email:       document.getElementById('g' + i + '-email').value.trim(),
+        firstName:   document.getElementById('g' + i + '-first').value.trim().slice(0, MAX_NAME_LEN),
+        lastName:    document.getElementById('g' + i + '-last').value.trim().slice(0, MAX_NAME_LEN),
+        email:       document.getElementById('g' + i + '-email').value.trim().slice(0, MAX_EMAIL_LEN),
         shirtGender: document.getElementById('g' + i + '-gender').value,
         shirtSize:   document.getElementById('g' + i + '-size').value
       });
@@ -172,8 +179,16 @@
       if (!g.firstName || !g.lastName || !g.email || !g.shirtGender || !g.shirtSize) {
         return 'Please fill in all fields for golfer ' + (i + 1) + '.';
       }
+      // A leading = + - @ would run as a formula in the Google Sheet
+      if (/^[=+\-@]/.test(g.firstName) || /^[=+\-@]/.test(g.lastName) || /^[=+\-@]/.test(g.email)) {
+        return 'Please remove the symbol at the start of the details for golfer ' + (i + 1) + '.';
+      }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(g.email)) {
         return 'Please enter a valid email for golfer ' + (i + 1) + '.';
+      }
+      var sizes = g.shirtGender === "Men's" ? SIZES_MEN : g.shirtGender === "Women's" ? SIZES_WOMEN : [];
+      if (sizes.indexOf(g.shirtSize) === -1) {
+        return 'Please choose a shirt and size for golfer ' + (i + 1) + '.';
       }
     }
     return null;
@@ -232,6 +247,13 @@
     closers[m].addEventListener('click', closeModal);
   }
 
+  // True when the hidden trap field is filled or the form was submitted implausibly fast
+  function looksLikeBot() {
+    var trap = document.getElementById('regWebsite');
+    if (trap && trap.value) return true;
+    return Date.now() - openedAt < MIN_FILL_MS;
+  }
+
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     errorEl.textContent = '';
@@ -240,6 +262,12 @@
     var validationError = validate(data);
     if (validationError) {
       errorEl.textContent = validationError;
+      return;
+    }
+
+    // Bots get the normal success screen but nothing is sent
+    if (looksLikeBot()) {
+      showSuccess(data);
       return;
     }
 
